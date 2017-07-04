@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>请登录</title>
+<link rel="stylesheet" type="text/css" href="/static/login/css/login.css" />
+</head>
+
+<body>
+
+<div class="all">
+<div class="bo">
+
+<form action="/nobly/login/loginsubmit" method="post">
+{% csrf_token %} 
+<input name="userall" type="password" style="width:240; height:30" class="la">
+</form>
+
+
+</div>
+</div>
+
+</body>

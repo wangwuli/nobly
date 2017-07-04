@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css"  href="{% static 'reception/style.css' %}" />
+
+<meta charset="utf-8">
+<title>{{ title_name }}</title>
+<script type="text/javascript" src="/static/reception/js/jquery-1.8.3.min.js"></script>
+
+<link rel="stylesheet" href="/static/reception/css/index.css" media="screen" type="text/css" />
+</head>
+<body>
+ 
+
+<script src="/static/reception/js/jquery.cookie.js"></script>
+
+<div id="container" style="min-width:1800px">
+ 
+
+<div id="header" style="background-image:url(/static/reception/images/title1.jpg);min-height:300px;">
+
+
+</div>
+
+<div id="menu" style="background-color:#3f4348;min-height:500px;width:300px;float:left;display:inline-block;margin-top:8px;">
+
+<div style="width:300px;height:110px">         
+
+<div style="width:100px;height:100px;margin-left:10px;display:inline-block;float:left">   
+<img src="/static/reception/images/Tx.jpg" height="100px" width="100px">
+</div>
+
+<div style="width:180px;height:100px;display:inline-block;float:left;" >
+
+<div class="myname" style="width:110px;height:20px;font-size:17px;margin:0 auto;margin-top:20px;"><a href='/' class="myname">Hi! whosyoudaddy</a></div>
+
+<div class="myBtn" style="width:30px;height:20px;font-size:13px;margin-top:40px;margin-left:140px;"><a href='/nobly/login/loginout' class="myBtn">注销</a></div>
+</div>
+
+</div>
+
+{% if ip_group_list %}
+  <ul>
+
+	{% for ipgroup,listip in ip_group_list.items %}
+	
+	<li class="block">
+		<input type="checkbox" name="item" id={{ ipgroup }} />   
+		<label for={{ ipgroup }}><i aria-hidden="true" class="icon-film"></i>{{ ipgroup }}<span>{{ listip | length }}</span></label>
+		<ul class="options">
+		{% for ipl in listip %}
+
+			<li><a><i aria-hidden="true" class="icon-movie"></i><lable>{{ ipl }}</lable><span>1</span></a></li>
+		{% endfor %}
+		</ul>
+	</li>
+	{% endfor %}
+	
+
+{% else %}
+    <p>No network data.</p>
+{% endif %} 
+  </ul>
+  
+  
+</div>
+
+
+
+<iframe id="mycontent" style="margin:8px;width:1400px;height:905px;display:inline-block; border:none;" src="/nobly/reception/getineargraph"></iframe>
+
+ 
+</div>
+
+ <script>
+
+ 
+ $(".options li").click(function(){
+	var ent ={};
+	ent.link = $(this).find('lable').html();
+
+	
+	var csrftoken = $.cookie('csrftoken');
+
+        
+	function csrfSafeMethod(method) {
+		return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+	}
+	
+	$.ajaxSetup({   
+		beforeSend: function(xhr,settings) {
+			if (!csrfSafeMethod(settings.type) && !this.crossDomain){
+				xhr.setRequestHeader("X-CSRFToken",csrftoken);
+			}
+		}
+	});
+	
+	$("#mycontent").attr("src","/nobly/reception/gethostchart?link="+ent.link);
+	
+
+
+})
+ </script>
+
+ <!-- <script type="text/javascript"> -->
+<!-- $(function () { -->
+    
+<!-- }); -->
+<!-- </script> -->
+
+</body>
+</html>

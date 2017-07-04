@@ -1,0 +1,29 @@
+﻿.myBtn:link,.myBtn:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+.myBtn:hover{
+ color:#3f4348;text-decoration:none;  /* 鼠标放上无下划线 */
+}
+
+/* .AAA{ */
+	
+	
+/* } */
+.myBtn{color:#666;cursor:pointer;}
+
+
+.myname:link,.myname:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+.myname:hover{
+ color:#F0F8FF;text-decoration:none;  /* 鼠标放上无下划线 */
+}
+
+/* .AAA{ */
+	
+	
+/* } */
+.myname{color:#666;cursor:pointer;}
+
+
+
