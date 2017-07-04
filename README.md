@@ -1,0 +1,16 @@
+说明
+===
+这是监控平台的一个失败模块，<br>
+由于独立开发，当时前后台服务器，很多东西都第一次接触，做的有点烂，一直放在一边<br>
+实现是基于Django的框架的后台，UI都是网络搜集而来，应该都比较符合规矩(有侵权请邮我:282621346@qq.com)<br>
+实时好像是信息通过ajax，预备使用websocket替代，也一直没时间。<br><br>
+期望代码能帮助到有需要的人，<br>
+也许后续有时间的话，我也会进行重构，拓展，<br><br>
+希望能多多提出建议与想法，还有代码。<br>
+![](https://raw.githubusercontent.com/wangwuli/nobly/master/P/login.jpg)
+<br>
+![](https://raw.githubusercontent.com/wangwuli/nobly/master/P/index.jpg)
+<br>
+![](https://raw.githubusercontent.com/wangwuli/nobly/master/P/host.jpg)
++++++++
+end，ths
